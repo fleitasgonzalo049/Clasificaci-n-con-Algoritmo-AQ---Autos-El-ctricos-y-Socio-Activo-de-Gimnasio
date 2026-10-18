@@ -1,56 +1,35 @@
-Ejercicio de práctica: Clasificación aplicando AQ con Python
+# Ejercicio de práctica: Clasificación aplicando AQ con Python
 
-Asignatura: Procesamiento de Aprendizaje Automático
+**Alumno:** Gonzalo Fleitas  
+**Materia / Módulo:** Aprendizaje Automático 
 
-Objetivo: Inducción de reglas de clasificación utilizando el algoritmo AQ a partir de conjuntos de ejemplos positivos (+) y negativos (-), e implementación de sus soluciones en Python.
-📌 Estructura del Proyecto
+---
 
-.
-├── README.md           # Portada principal, documentación y conclusiones teóricas.
-└── ejercicios_AQ.py    # Script ejecutable en Python con los datasets y reglas inducidas.
+## Introducción
 
-💻 Ejercicio 1: Concesionaria de Vehículos (Automóviles Eléctricos)
-1. Enunciado y Atributos
+El presente proyecto abarca la resolución práctica de dos problemas de clasificación mediante el **Algoritmo AQ**, un método de aprendizaje inductivo basado en la generación de reglas del tipo `SI <condición> ENTONCES <clase>`.
 
-Identificar qué características tienen los clientes que compran un automóvil eléctrico.
+El objetivo central de este algoritmo es inducir reglas generales a partir de un conjunto de datos etiquetados (ejemplos positivos y negativos), identificando los atributos clave que discriminan y separan de forma precisa ambas clases.
 
-    Atributos: edad, ingreso, tiene_garaje, distancia_trabajo
+---
 
-2. Análisis mediante Algoritmo AQ
+## Contenido del Repositorio
 
-Al realizar la comparación atributo por atributo entre ejemplos positivos y negativos:
+El proyecto se compone de dos ejercicios prácticos implementados en Python:
 
-    edad, ingreso y distancia_trabajo: Presentan solapamiento de valores entre ejemplos positivos y negativos, por lo que no discriminan la clase.
+1. **Ejercicio 1: Clasificación de compradores de vehículos eléctricos**
+   * **Objetivo:** Identificar los patrones distintivos de los clientes que deciden comprar un automóvil eléctrico frente a aquellos que no lo hacen.
+   * **Atributos evaluados:** `edad`, `ingreso`, `tiene_garaje`, `distancia_trabajo`.
 
-    tiene_garaje: Todos los ejemplos positivos poseen el valor "Si", mientras que todos los negativos poseen el valor "No".
+2. **Ejercicio 2: Inferencia de perfil para Socio Activo en un gimnasio**
+   * **Objetivo:** Determinar los criterios que caracterizan a los socios con actividad regular en un gimnasio respecto a los no activos.
+   * **Atributos evaluados:** `edad`, `frecuencia_asistencia`, `plan_contratado`.
 
-3. Regla Inducida
+---
 
-SI tiene_garaje = Si
-ENTONCES Compra_Auto_Electrico = Sí
+## Ejecución del Código
 
-🏋️ Ejercicio 2: Inferir qué significa ser Socio Activo de un Gimnasio
-1. Enunciado y Atributos
+Para ejecutar las validaciones de las reglas inducidas en Python, utiliza el archivo principal del proyecto:
 
-Diferenciar a las personas que son socios activos de un gimnasio frente a quienes no mantienen una actividad regular.
-
-    Atributos: edad, frecuencia (frecuencia de asistencia), plan (plan contratado)
-
-2. Análisis mediante Algoritmo AQ
-
-    edad: Los valores 25 y 32 aparecen tanto en el conjunto positivo como en el negativo, descartándose como condición discriminante directa.
-
-    frecuencia: En los ejemplos positivos es siempre "frecuente", mientras que en los negativos toma valores como "ocasional" o "rara".
-
-    plan: En los ejemplos positivos es siempre "premium", mientras que en los negativos es "básico" o "estándar".
-
-3. Regla Inducida
-
-SI frecuencia = "frecuente" Y plan = "premium"
-ENTONCES Socio_Activo = Sí
-
-🔍 Conclusiones Generales
-
-    Eficiencia del Algoritmo AQ: El algoritmo permite encontrar explicaciones simples y comprensibles a partir de datos estructurados, buscando la cobertura completa de ejemplos positivos y la exclusión estricta de ejemplos negativos.
-
-    Relevancia de Atributos Discriminantes: No todos los atributos tienen el mismo impacto inductivo. El análisis demuestra la importancia de aislar variables dependientes con alto poder de separación (como tiene_garaje en el primer caso y la combinación de frecuencia + plan en el segundo) para evitar sobreajustar la regla con datos irrelevantes (como la edad).
+```bash
+python ejercicios_AQ_python.py
